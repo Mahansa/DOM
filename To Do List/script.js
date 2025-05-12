@@ -20,8 +20,13 @@ function Tambah() {
 }
 
 function Hapus() {
-       document.getElementById("list").innerHTML = "";
-       localStorage.removeItem("todolist");
+          
+    let list = document.getElementById("list");
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+    localStorage.removeItem("todolist");
+    document.getElementById("inputText").value = "";
 }
 
 
