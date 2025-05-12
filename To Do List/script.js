@@ -13,16 +13,28 @@ function Tambah() {
     list.appendChild(listItem);
 
     document.getElementById("inputText").value = "";
-    localStorage.setItem(i,list)
     
-    let local = localStorage.getItem(i,list)
+    let currentList = Array.from(list.children).map(li => li.textContent);
+    localStorage.setItem("todolist", JSON.stringify(currentList));
     
 }
 
 function Hapus() {
     let list = document.getElementById("list");
     list.innerHTML = "";
+    localStorage.removeItem(list)
 }
 
 
-   
+window.onload = function() {
+    let savedList = JSON.parse(localStorage.getItem("todolist"));
+    if (savedList) {
+        let list = document.getElementById("list");
+        savedList.forEach(item => {
+            let listItem = document.createElement('li');
+            listItem.innerText = item;
+            list.appendChild(listItem);
+        });
+    }
+}
+
