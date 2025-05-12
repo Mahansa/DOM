@@ -1,0 +1,23 @@
+body{
+    background-color: antiquewhite;
+}
+
+.all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button{
+   gap: 60;
+}
+
+.button button{
+    background-color: rgb(165, 146, 146);
+    text-decoration: none;
+    color: black;
+    width: 200px;
+    height: 68px;
+    gap: 60px;
+}
