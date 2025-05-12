@@ -20,9 +20,8 @@ function Tambah() {
 }
 
 function Hapus() {
-    let list = document.getElementById("list");
-    list.innerHTML = "";
-    localStorage.removeItem(list)
+       document.getElementById("list").innerHTML = "";
+       localStorage.removeItem("todolist");
 }
 
 
